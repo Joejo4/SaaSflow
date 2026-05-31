@@ -1,6 +1,6 @@
-/* ==========================================
+/*
    1. RESET & VARIABLES
-   ========================================== */
+*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
@@ -37,9 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ==========================================
-   2. REUSABLE UTILITIES & BUTTONS
-   ========================================== */
 a {
   text-decoration: none;
   color: inherit;
@@ -94,9 +91,7 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* ==========================================
-   3. NAVIGATION BAR LAYOUT
-   ========================================== */
+/*NAVIGATION BAR LAYOUT*/
 .navbar {
   position: fixed;
   top: 0;
@@ -161,9 +156,7 @@ a {
   cursor: pointer;
 }
 
-/* ==========================================
-   4. HERO SECTION STYLING
-   ========================================== */
+/*HERO SECTION STYLING*/
 .hero {
   min-height: 100vh;
   padding-top: 120px; /* Offset for fixed navbar */
@@ -256,9 +249,7 @@ a {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
 }
-/* ==========================================
-   5. SECTION GLOBAL HEADERS
-   ========================================== */
+/*SECTION GLOBAL HEADERS*/
 .section-header {
   text-align: center;
   max-width: 600px;
@@ -279,9 +270,7 @@ a {
   line-height: 1.6;
 }
 
-/* ==========================================
-   6. FEATURES SECTION STYLING
-   ========================================== */
+/*FEATURES SECTION STYLING*/
 .features-section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -326,9 +315,7 @@ a {
   line-height: 1.6;
 }
 
-/* ==========================================
-   7. PRODUCT PREVIEW SECTION (THE APPLICATION MOCK)
-   ========================================== */
+/*PRODUCT PREVIEW SECTION (THE APPLICATION MOCK)*/
 .preview-section {
   padding: 4rem 2rem 8rem 2rem;
   max-width: 1200px;
@@ -487,9 +474,7 @@ a {
   );
 }
 
-/* ==========================================
-   8. TESTIMONIALS SECTION STYLING
-   ========================================== */
+/* TESTIMONIALS SECTION STYLING*/
 .testimonials-section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -528,11 +513,11 @@ a {
   gap: 1rem;
 }
 
-.avatar-placeholder {
+.avatar {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #242f47;
+  object-fit: cover;
 }
 
 .user-info h4 {
@@ -545,9 +530,7 @@ a {
   color: var(--text-muted);
 }
 
-/* ==========================================
-   9. PRICING SECTION STYLING
-   ========================================== */
+/*PRICING SECTION STYLING*/
 .pricing-section {
   padding: 6rem 2rem;
   max-width: 900px;
@@ -635,9 +618,8 @@ a {
   color: var(--accent-cyan);
 }
 
-/* ==========================================
-   10. FINAL CTA SECTION STYLING
-   ========================================== */
+/*
+ FINAL CTA SECTION STYLING*/
 .cta-section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -673,9 +655,7 @@ a {
   margin: 0 auto 2.5rem auto;
 }
 
-/* ==========================================
-   11. FOOTER STYLING
-   ========================================== */
+/* FOOTER STYLING*/
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 4rem 2rem 2rem 2rem;
@@ -750,4 +730,105 @@ a {
 
 .social-icons a:hover {
   color: var(--accent-cyan);
+}
+
+/*  RESPONSIVE BREAKPOINTS (MOBILE & TABLET)*/
+@media (max-width: 768px) {
+  /* Navigation Bar Mobile Layout */
+  .hamburger {
+    display: block; /* Show hamburger button */
+    z-index: 1001;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hide off-screen by default */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #0d1322;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem 2rem;
+    gap: 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+  }
+
+  .nav-actions {
+    position: fixed;
+    top: 320px; /* Position right below mobile menu links */
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    flex-direction: column;
+    padding: 0 2rem;
+    gap: 1rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+  }
+
+  /* Pull the mobile drawer into view when active class is toggled */
+  .nav-menu.active,
+  .nav-actions.active {
+    right: 0;
+  }
+
+  .nav-actions .btn-primary,
+  .nav-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero Section Mobile Restyling */
+  .hero-container {
+    grid-template-columns: 1fr; /* Stack text and mockup vertically */
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Product Preview Mockup Adaptation */
+  .app-dashboard {
+    grid-template-columns: 1fr; /* Drop sidebar overlay on mobile */
+    height: auto;
+  }
+
+  .app-sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-placeholder {
+    height: 150px;
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+  }
+
+  /* Pricing Layout Tweak */
+  .price-card.popular {
+    transform: scale(1); /* Reset desktop elevation scaling */
+    margin-top: 1rem;
+  }
+
+  /* Global Layout Tweak */
+  .section-header h2 {
+    font-size: 2rem;
+  }
 }
