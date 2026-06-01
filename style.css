@@ -866,4 +866,14 @@ a {
     width: 10%;
     border-radius: 2px 2px 0 0;
   }
+  .cta-box h2 {
+    font-size: 2rem;
+  }
+  .cta-box p {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
 }
